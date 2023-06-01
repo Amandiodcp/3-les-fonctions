@@ -1,0 +1,71 @@
+using System;
+
+class Calculator
+{
+    static void Main(string[] args)
+    {
+        while (true)
+        {
+            Console.WriteLine("calculadora");
+            Console.Write("numero 1 : ");
+            float firstOperand = float.Parse(Console.ReadLine());
+
+            Console.Write("numero 2: ");
+            float secondOperand = float.Parse(Console.ReadLine());
+
+            Console.Write("Opération (soma, sub, mult, divisao, modulo) : ");
+            string operation = Console.ReadLine();
+
+            float result = 0;
+
+            switch (operation)
+            {
+                case "soma":
+                    result = Add(firstOperand, secondOperand);
+                    break;
+                case "sub":
+                    result = Subtract(firstOperand, secondOperand);
+                    break;
+                case "mult":
+                    result = Multiply(firstOperand, secondOperand);
+                    break;
+                case "divisao":
+                    result = Divide(firstOperand, secondOperand);
+                    break;
+                case "modulo":
+                    result = Modulo((int)firstOperand, (int)secondOperand);
+                    break;
+                default:
+                    Console.WriteLine(" error .");
+                    continue;
+            }
+
+            Console.WriteLine($"{firstOperand} {operation} {secondOperand} = {result}\n");
+        }
+    }
+
+    static float Add(float s, float h)
+    {
+        return s + h;
+    }
+
+    static float Subtract(float s, float h)
+    {
+        return s - h;
+    }
+
+    static float Multiply(float s, float h)
+    {
+        return s * h;
+    }
+
+    static float Divide(float s, float h)
+    {
+        return s / h;
+    }
+
+    static int Modulo(int s, int h)
+    {
+        return s % h;
+    }
+}
